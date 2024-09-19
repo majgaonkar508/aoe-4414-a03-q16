@@ -90,10 +90,10 @@ Rz_long = np.array([[math.cos(o_long_rad), -math.sin(o_long_rad), 0],
            [math.sin(o_long_rad), math.cos(o_long_rad), 0], [0, 0, 1]])
 
 # calculate result of first rotation
-rot_1 = np.dot(Ry_lat, r_SEZ)
+rot_1 = np.matmul(Ry_lat, r_SEZ)
 
 # calculate result of second rotation
-rot_2 = np.dot(Rz_long, rot_1)
+rot_2 = np.matmul(Rz_long, rot_1)
 
 # final results with a translation from ECEF vector calculated from LLH
 ecef_x_km = r[0] + rot_2[0]
